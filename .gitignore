@@ -1,0 +1,10 @@
+.DS_Store
+.cursor/
+.env
+Amazon_Products*
+amazon_*
+*.log
+data/
+*env*
+*.csv
+vector_store*
