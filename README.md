@@ -7,24 +7,29 @@ An intelligent e-commerce assistant powered by **OpenAI GPT-4o** with **20,000+ 
 ## Features
 
 **Natural Language Search**
+
 - Smart entity extraction (category, gender, price, color, brand)
 - Example: `"Women's dresses under ₹2,000"`
 
 **Image-Based Search**
+
 - OpenAI Vision API analyzes product images
 - Hybrid search combining image understanding with text intent
 - Follow-up support: `"Find this in black"` or `"Cheaper options"`
 
 **Scenario Shopping**
+
 - Curated recommendations for occasions
 - Example: `"I'm going camping next week"`
 - Item refinement: `"Replace the first one with something cheaper"`
 
 **Conversational Follow-ups**
+
 - Multi-turn conversation with context preservation
 - Price/style refinement, product discussion, attribute filtering
 
 **Personalized Recommendations**
+
 - Gender enforcement for fashion categories
 - Customization based on age, interests, budget, and preferences
 
@@ -122,6 +127,7 @@ AI_Agent/
 ### POST /api/chat
 
 **Request:**
+
 ```json
 {
   "message": "Show me running shoes",
@@ -138,30 +144,33 @@ AI_Agent/
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
   "response": "Here are some great running shoes...",
-  "products": [{
-    "id": "FLP001",
-    "title": "Nike Air Zoom Pegasus",
-    "price": 5499.0,
-    "rating": 4.5,
-    "category": "Sports Shoes",
-    "brand": "Nike",
-    "product_url": "https://flipkart.com/..."
-  }]
+  "products": [
+    {
+      "id": "FLP001",
+      "title": "Nike Air Zoom Pegasus",
+      "price": 5499.0,
+      "rating": 4.5,
+      "category": "Sports Shoes",
+      "brand": "Nike",
+      "product_url": "https://flipkart.com/..."
+    }
+  ]
 }
 ```
 
 ### Other Endpoints
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/reset` | POST | Reset conversation history |
-| `/api/stats` | GET | Product counts and embedding statistics |
-| `/api/products` | GET | List products with filters |
-| `/api/health` | GET | Health check |
+| Endpoint        | Method | Description                             |
+| --------------- | ------ | --------------------------------------- |
+| `/api/reset`    | POST   | Reset conversation history              |
+| `/api/stats`    | GET    | Product counts and embedding statistics |
+| `/api/products` | GET    | List products with filters              |
+| `/api/health`   | GET    | Health check                            |
 
 ---
 
@@ -180,13 +189,13 @@ FLASK_DEBUG=False
 
 ## Available Scripts
 
-| Script | Purpose |
-|--------|---------|
-| `setup.sh` | Install dependencies |
-| `run.sh` | Start backend + frontend |
-| `import_flipkart_dataset.py` | Import ~20K products |
-| `generate_embeddings.py` | Generate vector embeddings |
-| `cleanup_duplicates.py` | Remove duplicates |
+| Script                       | Purpose                    |
+| ---------------------------- | -------------------------- |
+| `setup.sh`                   | Install dependencies       |
+| `run.sh`                     | Start backend + frontend   |
+| `import_flipkart_dataset.py` | Import ~20K products       |
+| `generate_embeddings.py`     | Generate vector embeddings |
+| `cleanup_duplicates.py`      | Remove duplicates          |
 
 ---
 
@@ -203,22 +212,9 @@ FLASK_DEBUG=False
 ## Dataset
 
 **Source:** Flipkart E-commerce Dataset  
-**Products:** ~20,000 items from `flipkart_com-ecommerce_sample.csv`  
+**Products:** ~20,000 items from Flipkart Products (https://www.kaggle.com/datasets/PromptCloudHQ/flipkart-products)
 **Categories:** Fashion, Footwear, Accessories, Beauty, Electronics, Home & Lifestyle, Sports
 
 **Data:** Product names, descriptions, specifications, category hierarchy, pricing, brand info, images, URLs
 
 ---
-
-## Key Implementation Details
-
-**Hybrid Search** - Semantic vector search + metadata filtering  
-**Conversation Memory** - Context tracking across multi-turn conversations  
-**Intent Classification** - Automatic detection: product search, general chat, scenario shopping, follow-ups  
-**Entity Extraction** - Structured filters: category, gender, price range, colors, brands, materials  
-**User Profile Integration** - Gender enforcement for fashion, personalized recommendations  
-**Image Understanding** - Vision API product attribute analysis
-
----
-
-**Version 2.0** | 20,000+ Flipkart Products | December 2025
