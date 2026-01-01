@@ -1,8 +1,15 @@
 # ShopBot - AI Shopping Assistant
 
-> **📺 DEMO VIDEO:** [View on Google Drive](https://drive.google.com/file/d/1Tf0EREGZ66N13l8X7WrL1teqCvQyF7Nm/view?usp=sharing)
-
 An intelligent e-commerce assistant powered by **OpenAI GPT-4o** with **20,000+ Flipkart products**.
+
+---
+
+## Quick Access
+### DEMO VIDEO: [Watch on Google Drive](https://drive.google.com/file/d/1Tf0EREGZ66N13l8X7WrL1teqCvQyF7Nm/view?usp=sharing)
+
+### AGENT API: [AGENT_API.md](docs/AGENT_API.md)
+
+---
 
 ## Features
 
@@ -106,6 +113,7 @@ AI_Agent/
 ├── backend/           # Flask REST API
 │   ├── app.py        # Main application
 │   └── api/          # Endpoints
+├── docs/             # Technical documentation
 ├── frontend/         # React application
 │   └── src/
 │       ├── components/
@@ -123,6 +131,8 @@ AI_Agent/
 ---
 
 ## API Reference
+
+For a detailed breakdown of the internal agent logic, search mechanisms, and multi-modal processing, see the **[Agent API Documentation](docs/AGENT_API.md)**.
 
 ### POST /api/chat
 
@@ -201,17 +211,17 @@ FLASK_DEBUG=False
 
 ## Tech Stack
 
-**Frontend:** React 18, Fetch API  
-**Backend:** Flask 3.0, Flask-CORS, Pydantic  
-**AI/ML:** OpenAI GPT-4o, GPT-4o-mini Vision, text-embedding-3-small  
-**Database:** SQLite, ChromaDB  
+**Frontend:** React 18, Fetch API
+**Backend:** Flask 3.0, Flask-CORS, Pydantic
+**AI/ML:** OpenAI GPT-4o, GPT-4o-mini Vision, text-embedding-3-small
+**Database:** SQLite, ChromaDB
 **Libraries:** Pillow, pandas, numpy, python-dotenv
 
 ---
 
 ## Dataset
 
-**Source:** Flipkart E-commerce Dataset  
+**Source:** Flipkart E-commerce Dataset
 **Products:** ~20,000 items from Flipkart Products (https://www.kaggle.com/datasets/PromptCloudHQ/flipkart-products)
 **Categories:** Fashion, Footwear, Accessories, Beauty, Electronics, Home & Lifestyle, Sports
 
